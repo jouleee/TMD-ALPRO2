@@ -1,0 +1,54 @@
+     ██╗░█████╗░███████╗██╗       ██████╗░██████╗░███╗   ███╗░██████╗
+     ██║██╔══██╗██╔════╝██║       ██╔══██╗██╔══██╗████╗░████║██╔════╝
+     ██║██║░░██║█████╗░░██║       ██║░░██║██████╦╝██╔████╔██║╚█████╗░
+██╗  ██║██║░░██║██╔══╝░░██║       ██║░░██║██╔══██╗██║╚██╔╝██║░╚═══██╗
+╚█████╔╝╚█████╔╝███████╗███████╗  ██████╔╝██████╦╝██║░╚═╝░██║██████╔╝
+ ╚════╝  ╚════╝ ╚══════╝╚══════╝  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═════╝
+
+---- Joel DBMS Documentation ----
+
+-- Query Usage : 
+[INPUT] [table] [id] [att1] [att2] [att3];
+[UPDATE] [table] [id] [att1] [att2] [att3];
+[DELETE] [table] [id];
+[SHOW] [table];
+[SHOW] [table] [table]; *join table
+
+-- Command List :
+- INPUT/Input/input      Adds new records to the specified table.
+- UPDATE/Update/update   Modifies existing records in the specified table.
+- DELETE/Delete/delete   Removes records from the specified table.
+- SHOW/Show/show         Displays all records from the specified table, presenting the current state of the data.
+
+-- Table List :
+< tdonatur table> : 4 columns
+id_donatur - nama_donatur - pekerjaan - id_panti
+
+< tpantiasuhan table> : 4 columns
+id_panti - nama_panti - lokasi - no_telp
+
+-- Query OK List :
+INPUT tpantiasuhan P004 PantiAsuhanHarapanBunda Sukabumi 6285243457654;
+INPUT tdonatur D005 Abdul Asprak P003;
+UPDATE tdonatur D005 Abdullah Asprak P003;
+UPDATE tpantiasuhan P004 PantiAsuhanHarapanIndah Sukabumi 6285243457654;
+DELETE tpantiasuhan P004;
+DELETE tdonatur D003;
+SHOW tdonatur;
+SHOW tpantiasuhan;
+SHOW tdonatur tpantiasuhan;
+
+
+-- Query Error List :
+INPUT tpantiasuhan P003 PantiAsuhanHarapanBunda Sukabumi 6285243457654;
+INPUT tpantiasuhan P004 PantiAsuhanHarapanBunda;
+INSERT tpantiasuhan P003 PantiAsuhanHarapanBunda Sukabumi 6285243457654;
+SHOW tdonatur
+SHOW tpantijompo;
+UPDATE tpanti P003 PantiAsuhanHarapanBunda Sukabumi 6285243457654;
+DELETE tdonatur D007;
+DELETE tpantiasuhan P001;
+INPUT tpantiasuhan P004 PantiAsuhanHarapanBunda Sukabumi 6285243457654 Baik;
+SHOW tdonatur tpanti;
+INPUT tdonatur D004 Jasonnn CyberSecurity P008;
+INPUT tdonatur D001 Grafeee SoftwareEngineer P002;
